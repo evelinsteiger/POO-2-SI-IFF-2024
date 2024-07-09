@@ -15,7 +15,7 @@ public interface InterfaceDao<T> {
     
     public abstract void create(T input) throws Exception;
    
-    public abstract void update(T input) throws Exception;
+    public abstract void update(T input, int id) throws Exception;
     
     public abstract void delete(T input) throws Exception;
     
