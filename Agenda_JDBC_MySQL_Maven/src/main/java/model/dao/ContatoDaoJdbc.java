@@ -17,7 +17,7 @@ import model.Contato;
  */
 public class ContatoDaoJdbc implements InterfaceDao<Contato>{
     
-    private final Connection conn;
+    private Connection conn;
     
     public ContatoDaoJdbc() throws Exception {
         this.conn = ConnFactory.getConnection();
@@ -80,13 +80,10 @@ public class ContatoDaoJdbc implements InterfaceDao<Contato>{
 
     @Override
     public Contato show(int id) throws Exception {
-        Contato item = new Contato();
-
         try {
             PreparedStatement select = conn.prepareStatement("SELECT * FROM Contato WHERE id = ?");
-
+            Contato item = new Contato();
             select.setInt(1, id);
-
             ResultSet response = select.executeQuery();
 
             while (response.next()) {
@@ -95,22 +92,21 @@ public class ContatoDaoJdbc implements InterfaceDao<Contato>{
                 item.setEmail(response.getString("email"));
                 item.setTelefone(response.getString("telefone"));
             }
+            
+            return item;
         } finally {
             if(conn != null){
                 conn.close();
             }
         }
-
-        return item;
     }
 
     @Override
     public List<Contato> index() throws Exception {
-        List<Contato> list = new ArrayList();
-
         try {
             PreparedStatement select = conn.prepareStatement("SELECT * FROM Contato");
             ResultSet response = select.executeQuery();
+            List<Contato> list = new ArrayList();
 
             while (response.next()) {
                 Contato item = new Contato();
@@ -122,13 +118,13 @@ public class ContatoDaoJdbc implements InterfaceDao<Contato>{
 
                 list.add(item);
             }
+            
+            return list;
         } finally {
             if(conn != null){
                 conn.close();
             }
         }
-        
-        return list;
     }
     
 }
