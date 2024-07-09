@@ -35,16 +35,16 @@ public class Main {
 
                 switch (option) {
                     case 1 -> {
-                        ContatoDaoJdbc dao = DaoFactory.newContatoDao();
+                        ContatoDaoJdbc daoCreate = DaoFactory.newContatoDao();
                         Contato createContato = new Contato();
                         createContato.setNome(JOptionPane.showInputDialog("Informe o nome:"));
                         createContato.setEmail(JOptionPane.showInputDialog("Informe o e-mail:"));
                         createContato.setTelefone(JOptionPane.showInputDialog("Informe o telefone:"));
-                        dao.create(createContato);
+                        daoCreate.create(createContato);
                     }
                     case 2 -> {
-                        ContatoDaoJdbc dao = DaoFactory.newContatoDao();
-                        list = dao.index();
+                        ContatoDaoJdbc daoList = DaoFactory.newContatoDao();
+                        list = daoList.index();
                         response = "";
 
                         for (Contato item : list) {
@@ -54,17 +54,19 @@ public class Main {
                         Contato oldContato = new Contato();
                         oldContato.setId(Integer.parseInt(JOptionPane.showInputDialog(response + "\n" + "Informe o ID do contato a editar:")));
 
-                        Contato newContato = dao.show(oldContato.getId());
+                        ContatoDaoJdbc daoShow = DaoFactory.newContatoDao();
+                        Contato newContato = daoShow.show(oldContato.getId());
 
                         newContato.setNome(JOptionPane.showInputDialog("Confirme o nome:", newContato.getNome()));
                         newContato.setEmail(JOptionPane.showInputDialog("Confirme o e-mail:", newContato.getEmail()));
                         newContato.setTelefone(JOptionPane.showInputDialog("Confirme o telefone:", newContato.getTelefone()));
 
-                        dao.update(newContato, newContato.getId());
+                        ContatoDaoJdbc daoUpdate = DaoFactory.newContatoDao();
+                        daoUpdate.update(newContato, newContato.getId());
                     }
                     case 3 -> {
-                        ContatoDaoJdbc dao = DaoFactory.newContatoDao();
-                        list = dao.index();
+                        ContatoDaoJdbc daoList = DaoFactory.newContatoDao();
+                        list = daoList.index();
                         response = "";
 
                         for (Contato item : list) {
@@ -74,7 +76,9 @@ public class Main {
                         int id = Integer.parseInt(JOptionPane.showInputDialog(response + "\n" + "Informe o id do contato a excluir: "));
                         Contato contato = new Contato();
                         contato.setId(id);
-                        dao.delete(contato);
+                        
+                        ContatoDaoJdbc daoDelete = DaoFactory.newContatoDao();
+                        daoDelete.delete(contato);
                     }
                     case 4 -> {
                         ContatoDaoJdbc dao = DaoFactory.newContatoDao();

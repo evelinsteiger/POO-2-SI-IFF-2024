@@ -17,7 +17,7 @@ import model.Contato;
  */
 public class ContatoDaoJdbc implements InterfaceDao<Contato>{
     
-    private Connection conn;
+    private final Connection conn;
     
     public ContatoDaoJdbc() throws Exception {
         this.conn = ConnFactory.getConnection();
