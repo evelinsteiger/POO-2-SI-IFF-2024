@@ -1,0 +1,49 @@
+@options
+@packages
+-classpath
+'/Users/evelinsteiger/.m2/repository/com/mysql/mysql-connector-j/8.3.0/mysql-connector-j-8.3.0.jar:/Users/evelinsteiger/.m2/repository/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'17'
+-sourcepath
+'/Users/evelinsteiger/NetBeansProjects/Agenda_JDBC_MySQL_Maven/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2024. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/Users/evelinsteiger/NetBeansProjects/Agenda_JDBC_MySQL_Maven/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Agenda_JDBC_MySQL_Maven 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'Agenda_JDBC_MySQL_Maven 1.0-SNAPSHOT API'
+model
+model.dao
+view
+/Users/evelinsteiger/.m2/repository/com/mysql/mysql-connector-j/8.3.0/mysql-connector-j-8.3.0.jar = 1705352827000
+/Users/evelinsteiger/.m2/repository/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar = 1700088488000
+/Users/evelinsteiger/NetBeansProjects/Agenda_JDBC_MySQL_Maven/src/main/java = 1720476804385
+/Users/evelinsteiger/NetBeansProjects/Agenda_JDBC_MySQL_Maven/target/site/apidocs/tag-search-index.js = 1720494788655
+/Users/evelinsteiger/NetBeansProjects/Agenda_JDBC_MySQL_Maven/target/site/apidocs/overview-tree.html = 1720494788645
+/Users/evelinsteiger/NetBeansProjects/Agenda_JDBC_MySQL_Maven/target/site/apidocs/module-search-index.js = 1720494788654
+/Users/evelinsteiger/NetBeansProjects/Agenda_JDBC_MySQL_Maven/target/site/apidocs/index.html = 1720494788646
+/Users/evelinsteiger/NetBeansProjects/Agenda_JDBC_MySQL_Maven/target/site/apidocs/package-search-index.js = 1720494788654
+/Users/evelinsteiger/NetBeansProjects/Agenda_JDBC_MySQL_Maven/target/site/apidocs/jquery-ui.overrides.css = 1720494788664
+/Users/evelinsteiger/NetBeansProjects/Agenda_JDBC_MySQL_Maven/target/site/apidocs/index-all.html = 1720494788659
+/Users/evelinsteiger/NetBeansProjects/Agenda_JDBC_MySQL_Maven/target/site/apidocs/allpackages-index.html = 1720494788654
+/Users/evelinsteiger/NetBeansProjects/Agenda_JDBC_MySQL_Maven/target/site/apidocs/member-search-index.js = 1720494788655
+/Users/evelinsteiger/NetBeansProjects/Agenda_JDBC_MySQL_Maven/target/site/apidocs/script.js = 1720494788662
+/Users/evelinsteiger/NetBeansProjects/Agenda_JDBC_MySQL_Maven/target/site/apidocs/stylesheet.css = 1720494788662
+/Users/evelinsteiger/NetBeansProjects/Agenda_JDBC_MySQL_Maven/target/site/apidocs/overview-summary.html = 1720494788660
+/Users/evelinsteiger/NetBeansProjects/Agenda_JDBC_MySQL_Maven/target/site/apidocs/help-doc.html = 1720494788661
+/Users/evelinsteiger/NetBeansProjects/Agenda_JDBC_MySQL_Maven/target/site/apidocs/element-list = 1720494788627
+/Users/evelinsteiger/NetBeansProjects/Agenda_JDBC_MySQL_Maven/target/site/apidocs/allclasses-index.html = 1720494788651
+/Users/evelinsteiger/NetBeansProjects/Agenda_JDBC_MySQL_Maven/target/site/apidocs/type-search-index.js = 1720494788654
+/Users/evelinsteiger/NetBeansProjects/Agenda_JDBC_MySQL_Maven/target/site/apidocs/search.js = 1720494788663
