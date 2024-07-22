@@ -36,16 +36,16 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }
-
+    }    
+     
+    @FXML
     public void store() {
-        Produto input = new Produto();
+        Produto input = new Produto(
+                Integer.parseInt(txtId.getText()),
+                txtNome.getText(),
+                Integer.parseInt(txtQtde.getText()),
+                Float.parseFloat(txtPreco.getText()));
         
-        input.setId(Integer.parseInt(txtId.getText()));
-        input.setNome(txtNome.getText());
-        input.setQtde(Integer.parseInt(txtQtde.getText()));
-        input.setPreco(Float.valueOf(txtPreco.getText()));
-                
         System.out.println(input);
     }
 

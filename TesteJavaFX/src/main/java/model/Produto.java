@@ -9,7 +9,6 @@ package model;
  * @author evelinsteiger
  */
 public class Produto {
-    
     private int id;
     private String nome;
     private int qtde;
