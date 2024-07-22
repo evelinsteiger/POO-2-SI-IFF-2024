@@ -16,3 +16,8 @@ Ou Netbeans -> Settings -> Java -> JavaFX -> {path}
 
 Startando projeto:
 Novo projeto -> “FXML JavaFX Maven Archetype” -> {nome} -> Finish
+
+Obs: 
+Projetos em mac com arquitetura M* atualizar o JDK e o JavaFX para o 22.0.2
+Adicionar manualmente a lib.
+Ao alterar a pasta de ref ao .fxml (Ex: controller), atualizar o export na arquivo module-info.java
