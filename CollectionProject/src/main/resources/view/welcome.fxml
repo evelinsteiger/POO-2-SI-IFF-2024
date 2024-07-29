@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="480.0" maxWidth="640.0" minHeight="480.0" minWidth="640.0" prefHeight="480.0" prefWidth="640.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.WelcomeController">
+    <stylesheets>
+        <URL value="@/styles/welcome.css" />
+    </stylesheets>
+   <children>
+      <ImageView fitHeight="480.0" fitWidth="640.0" layoutX="-10.0" layoutY="-110.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../assets/bg.png" />
+         </image>
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+      </ImageView>
+      <Text fill="#c76383" layoutX="230.0" layoutY="181.0" stroke="WHITE" strokeDashOffset="10.0" strokeType="OUTSIDE" strokeWidth="3.5" text="ARCADE" textAlignment="CENTER" underline="true">
+         <font>
+            <Font name="Rockwell Bold Italic" size="40.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="260.0" layoutY="214.0" stroke="#5f2e6a" strokeDashOffset="3.0" strokeLineCap="BUTT" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="4.0" text="COLLECTION" textAlignment="CENTER">
+         <font>
+            <Font name="Futura Bold" size="18.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnStart" alignment="CENTER" layoutX="273.0" layoutY="250.0" mnemonicParsing="false" onAction="#onStart" style="-fx-background-color: transparent; -fx-border-width: 2px; -fx-border-color: #5F2E6A;" text="START ▶" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Futura Bold" size="16.0" />
+         </font>
+         <effect>
+            <Reflection />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>

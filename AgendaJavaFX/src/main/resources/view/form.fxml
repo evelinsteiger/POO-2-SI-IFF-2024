@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FormController">
+   <children>
+      <SplitPane dividerPositions="0.29797979797979796" layoutX="39.0" layoutY="28.0" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="138.0" style="-fx-background-color: white;">
+               <children>
+                  <Button fx:id="btnGoBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onNavigate" text="Voltar" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-margin: 10px;">
+               <children>
+                  <ToolBar layoutX="-9.0" layoutY="358.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="416.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                    <items>
+                        <Button fx:id="btnSubmit" defaultButton="true" mnemonicParsing="false" onAction="#onSubmit" text="Salvar" />
+                      <Button fx:id="btnCancel" cancelButton="true" mnemonicParsing="false" onAction="#onCancel" text="Cancelar" />
+                    </items>
+                  </ToolBar>
+                  <TextField fx:id="txtNome" layoutX="23.0" layoutY="113.0" prefHeight="27.0" prefWidth="364.0" />
+                  <TextField fx:id="txtTelefone" layoutX="23.0" layoutY="179.0" prefHeight="27.0" prefWidth="364.0" />
+                  <TextField fx:id="txtEmail" layoutX="23.0" layoutY="244.0" prefHeight="27.0" prefWidth="364.0" />
+                  <Label layoutX="21.0" layoutY="96.0" prefHeight="17.0" prefWidth="72.0" text="Nome:" />
+                  <Label layoutX="21.0" layoutY="156.0" text="Telefone:" />
+                  <Label layoutX="26.0" layoutY="219.0" text="E-mail: " />
+                  <Text fill="#333333" layoutX="46.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Preencha os campos para adicionar um novo contato" textAlignment="CENTER" wrappingWidth="318.0">
+                     <font>
+                        <Font name="Helvetica Neue Bold" size="16.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

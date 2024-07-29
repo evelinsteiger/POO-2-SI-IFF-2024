@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.canvas.*?>
 <?import javafx.scene.chart.*?>
 <?import java.lang.*?>
@@ -9,11 +14,98 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #;" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controller.MainController">
+<AnchorPane id="AnchorPane" maxHeight="480.0" maxWidth="640.0" minHeight="480.0" minWidth="640.0" prefHeight="480.0" prefWidth="640.0" style="-fx-background-color: #21002B; -fx-padding: 25px;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
     <stylesheets>
         <URL value="@/styles/main.css" />
     </stylesheets>
    <children>
-    <AnchorPane layoutX="15.0" layoutY="192.0" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+    <AnchorPane layoutX="103.0" layoutY="70.0" minHeight="0.0" minWidth="0.0" prefHeight="159.0" prefWidth="526.0" style="-fx-background-color: #5E4665; -fx-background-insets: 3; -fx-border-width: 3; -fx-border-radius: 10px; -fx-border-color: #5E4665;">
+         <children>
+            <Text fill="WHITE" layoutX="14.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meus favoritos">
+               <font>
+                  <Font name="Futura Medium" size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#ffffffcc" layoutX="14.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confira a lista dos seus favoritos">
+               <font>
+                  <Font name="Futura Medium" size="12.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+    <AnchorPane layoutX="103.0" layoutY="240.0" minHeight="0.0" minWidth="0.0" prefHeight="227.0" prefWidth="300.0" style="-fx-background-color: #5E4665; -fx-background-insets: 3; -fx-border-width: 3; -fx-border-radius: 10px; -fx-border-color: #5E4665;">
+         <children>
+            <Text fill="WHITE" layoutX="14.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lançamentos" wrappingWidth="125.0">
+               <font>
+                  <Font name="Futura Medium" size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#ffffffcc" layoutX="14.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confira a lista dos lançamentos recentes">
+               <font>
+                  <Font name="Futura Medium" size="12.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <Pane layoutX="110.0" layoutY="21.0" prefHeight="29.0" prefWidth="182.0">
+         <children>
+            <Text fill="#ffffffe4" layoutX="2.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bem-vindo de volta, Evelin!" textAlignment="CENTER" wrappingWidth="178.71875">
+               <font>
+                  <Font name="Futura Medium" size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <ToolBar layoutX="467.0" layoutY="13.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="45.0" prefWidth="159.0" style="-fx-background-color: #66264E; -fx-padding: 8px 10px; -fx-border-radius: 5px; -fx-border-width: 3; -fx-background-insets: 3; -fx-border-color: #66264E;">
+        <items>
+          <Button fx:id="btnLogout" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLogout" style="-fx-background-color: #66264E;" text="sair" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Helvetica Neue Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="btnAccount" mnemonicParsing="false" style="-fx-background-color: #250032;" text="minha conta" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Helvetica Neue Bold" size="12.0" />
+               </font>
+            </Button>
+        </items>
+      </ToolBar>
+      <VBox layoutX="14.0" layoutY="20.0" prefHeight="53.0" prefWidth="72.0" style="-fx-background-color: #66264E; -fx-border-radius: 10px; -fx-border-color: #66264E; -fx-border-width: 3; -fx-background-insets: 3;">
+         <children>
+            <ImageView fitHeight="50.0" fitWidth="67.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/logo.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="8.0" right="8.0" top="10.0" />
+         </padding>
+      </VBox>
+      <AnchorPane layoutX="412.0" layoutY="240.0" minHeight="0.0" minWidth="0.0" prefHeight="227.0" prefWidth="218.0" style="-fx-background-color: #5E4665; -fx-background-insets: 3; -fx-border-width: 3; -fx-border-radius: 10px; -fx-border-color: #5E4665;">
+         <children>
+            <Text fill="WHITE" layoutX="14.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Progresso">
+               <font>
+                  <Font name="Futura Medium" size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#ffffffcc" layoutX="14.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confira seu progresso">
+               <font>
+                  <Font name="Futura Medium" size="12.0" />
+               </font>
+            </Text>
+            <PieChart layoutX="9.0" layoutY="51.0" prefHeight="131.0" prefWidth="200.0" />
+         </children>
+      </AnchorPane>
+      <VBox layoutX="14.0" layoutY="103.0" prefHeight="365.0" prefWidth="72.0" style="-fx-background-color: #66264E; -fx-border-radius: 10px; -fx-border-color: #66264E; -fx-border-width: 3; -fx-background-insets: 3;">
+         <padding>
+            <Insets bottom="10.0" left="8.0" right="8.0" top="10.0" />
+         </padding>
+      </VBox>
    </children>
 </AnchorPane>
