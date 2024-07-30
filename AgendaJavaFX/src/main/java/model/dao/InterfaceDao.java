@@ -21,5 +21,5 @@ public interface InterfaceDao<T> {
     
     public abstract T show(int id) throws Exception;
     
-    public abstract List<T> index() throws Exception;
+    public abstract List<T> index(String param) throws Exception;
 }

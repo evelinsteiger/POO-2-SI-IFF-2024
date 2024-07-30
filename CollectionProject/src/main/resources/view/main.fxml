@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.media.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.shape.*?>
@@ -31,6 +32,11 @@
                   <Font name="Futura Medium" size="12.0" />
                </font>
             </Text>
+            <ScrollBar layoutX="8.0" layoutY="140.0" maxHeight="15.0" minHeight="15.0" prefHeight="15.0" prefWidth="510.0" style="-fx-background-color: #8A7691; -fx-border-radius: 5px; -fx-border-width: 2; -fx-border-color: #8A7691; -fx-background-insets: 2;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ScrollBar>
          </children>
       </AnchorPane>
     <AnchorPane layoutX="103.0" layoutY="240.0" minHeight="0.0" minWidth="0.0" prefHeight="227.0" prefWidth="300.0" style="-fx-background-color: #5E4665; -fx-background-insets: 3; -fx-border-width: 3; -fx-border-radius: 10px; -fx-border-color: #5E4665;">
@@ -45,6 +51,7 @@
                   <Font name="Futura Medium" size="12.0" />
                </font>
             </Text>
+            <ListView layoutX="14.0" layoutY="54.0" prefHeight="159.0" prefWidth="269.0" style="-fx-background-color: #5E4665;" />
          </children>
       </AnchorPane>
       <Pane layoutX="110.0" layoutY="21.0" prefHeight="29.0" prefWidth="182.0">
@@ -58,7 +65,7 @@
       </Pane>
       <ToolBar layoutX="467.0" layoutY="13.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="45.0" prefWidth="159.0" style="-fx-background-color: #66264E; -fx-padding: 8px 10px; -fx-border-radius: 5px; -fx-border-width: 3; -fx-background-insets: 3; -fx-border-color: #66264E;">
         <items>
-          <Button fx:id="btnLogout" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLogout" style="-fx-background-color: #66264E;" text="sair" textAlignment="CENTER" textFill="WHITE">
+          <Button fx:id="btnLogout" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLogout" style="-fx-background-color: #66264E;" text="sair" textAlignment="CENTER" textFill="WHITE" underline="true">
                <font>
                   <Font name="Helvetica Neue Bold" size="12.0" />
                </font>
@@ -102,7 +109,7 @@
             <PieChart layoutX="9.0" layoutY="51.0" prefHeight="131.0" prefWidth="200.0" />
          </children>
       </AnchorPane>
-      <VBox layoutX="14.0" layoutY="103.0" prefHeight="365.0" prefWidth="72.0" style="-fx-background-color: #66264E; -fx-border-radius: 10px; -fx-border-color: #66264E; -fx-border-width: 3; -fx-background-insets: 3;">
+      <VBox layoutX="7.0" layoutY="103.0" prefHeight="365.0" prefWidth="87.0" style="-fx-background-color: #66264E; -fx-border-radius: 10px; -fx-border-color: #66264E; -fx-border-width: 3; -fx-background-insets: 3;">
          <padding>
             <Insets bottom="10.0" left="8.0" right="8.0" top="10.0" />
          </padding>

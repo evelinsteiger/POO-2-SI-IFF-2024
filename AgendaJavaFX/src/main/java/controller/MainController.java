@@ -9,10 +9,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.collections.FXCollections;
-import static javafx.collections.FXCollections.observableList;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -68,7 +65,7 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
-            fetchContato();
+            fetchContato("");
         } catch (Exception ex) {
             System.out.println("Erro:" + ex.getMessage());
         }
@@ -76,8 +73,14 @@ public class MainController implements Initializable {
 
     @FXML
     private void onCreate(ActionEvent event) throws IOException {
+        Contato currentContato = tableContato.selectionModelProperty().getValue().getSelectedItem();
+        
         try {
-            App.setRoot("form");    
+            if (currentContato != null) {
+                FormController.setCurrentContato(null);
+            }
+            
+            App.setRoot("form");
         } catch (IOException e) {
             System.out.println("Erro:" + e.getMessage());
         }
@@ -85,35 +88,48 @@ public class MainController implements Initializable {
 
     @FXML
     private void onEdit(ActionEvent event) throws IOException {
+        Contato currentContato = tableContato.selectionModelProperty().getValue().getSelectedItem();
+        
+        if (currentContato != null) {
+            FormController.setCurrentContato(currentContato);
+            App.setRoot("form");
+        } else {
+            Alert info =  new Alert(Alert.AlertType.INFORMATION);
+            
+            info.setTitle("Atenção");
+            info.setContentText("Selecione um contato abaixo antes de editar.");
+            info.showAndWait();
+        }
     }
 
     @FXML
-    private void onSearch(ActionEvent event) {
-
+    private void onSearch(ActionEvent event) throws Exception {
+        fetchContato(txtFilter.getText());
     }
 
     @FXML
-    private void onClean(ActionEvent event) {
+    private void onClean(ActionEvent event) throws Exception {
         txtFilter.clear();
+        fetchContato("");
     }
     
     @FXML
     private void onDelete(ActionEvent event) throws Exception {
         
-        Contato data = tableContato.selectionModelProperty().getValue().getSelectedItem();
+        Contato currentContato = tableContato.selectionModelProperty().getValue().getSelectedItem();
         
-        if (data != null) {
+        if (currentContato != null) {
             ContatoDaoJdbc daoDelete = DaoFactory.newContatoDao();    
             Alert alert =  new Alert(Alert.AlertType.CONFIRMATION);
             
             alert.setTitle("Aviso");
-            alert.setContentText("Deseja excluir " + data.getNome() + "?");
+            alert.setContentText("Deseja excluir " + currentContato.getNome() + "?");
             
             Optional<ButtonType> response = alert.showAndWait();
             
             if (response.get() == ButtonType.OK) {
                 try {
-                    daoDelete.delete(data);
+                    daoDelete.delete(currentContato);
                 } catch (IOException e) {
                     String message = "Ocorreu um erro" + e.getMessage();
                     
@@ -125,18 +141,18 @@ public class MainController implements Initializable {
                 }   
             }
             
-            fetchContato();
+            fetchContato("");
         }
         
     }
     
-    private void fetchContato() throws Exception {
+    private void fetchContato(String param) throws Exception {
         colNome.setCellValueFactory(new PropertyValueFactory<>("Nome"));
         colTelefone.setCellValueFactory(new PropertyValueFactory<>("Telefone"));
         colEmail.setCellValueFactory(new PropertyValueFactory<>("Email"));
         
         ContatoDaoJdbc dao = DaoFactory.newContatoDao();
-        list = dao.index();
+        list = dao.index(param);
         
         observableList = FXCollections.observableArrayList(list);
         

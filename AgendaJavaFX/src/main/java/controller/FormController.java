@@ -38,13 +38,22 @@ public class FormController implements Initializable {
     @FXML
     private TextField txtEmail;
     
+    private static Contato currentContato;
+
+    public static void setCurrentContato(Contato currentContato) {
+        FormController.currentContato = currentContato;
+    }
     
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        if (currentContato != null) {
+            txtNome.setText(currentContato.getNome());
+            txtEmail.setText(currentContato.getEmail());
+            txtTelefone.setText(currentContato.getTelefone());
+        }
     }    
     
     @FXML
@@ -60,18 +69,24 @@ public class FormController implements Initializable {
     @FXML
     private void onSubmit(ActionEvent event) throws Exception {
         try {
-            ContatoDaoJdbc daoCreate = DaoFactory.newContatoDao();
-            Contato createContato = new Contato();
+            ContatoDaoJdbc dao = DaoFactory.newContatoDao();
+            Contato contato = new Contato();
 
-            createContato.setNome(txtNome.getText());
-            createContato.setEmail(txtEmail.getText());
-            createContato.setTelefone(txtTelefone.getText());
-
-            daoCreate.create(createContato);
-            
-            App.setRoot("main");
+            contato.setNome(txtNome.getText());
+            contato.setEmail(txtEmail.getText());
+            contato.setTelefone(txtTelefone.getText());
+                
+            if (currentContato == null) {
+                dao.create(contato);
+            } else {
+                contato.setId(currentContato.getId());
+                dao.update(contato, currentContato.getId());
+            }
         } catch (IOException e) {
             System.out.println("Erro:" + e.getMessage());
+        } finally {
+            currentContato = null;
+            App.setRoot("main");
         }
     }
 

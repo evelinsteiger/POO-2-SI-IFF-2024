@@ -102,9 +102,16 @@ public class ContatoDaoJdbc implements InterfaceDao<Contato>{
     }
 
     @Override
-    public List<Contato> index() throws Exception {
+    public List<Contato> index(String param) throws Exception {
         try {
             PreparedStatement select = conn.prepareStatement("SELECT * FROM Contato");
+                
+            if (!param.equals("")) {
+                select = conn.prepareStatement(
+                        "SELECT * FROM Contato WHERE nome like '%" + param + "%'"
+                );
+            }
+            
             ResultSet response = select.executeQuery();
             List<Contato> list = new ArrayList();
 
